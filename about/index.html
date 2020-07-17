@@ -8,7 +8,7 @@
 <head>
   <meta charset="UTF-8">
   <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
-  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon123.png">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -52,11 +52,22 @@
 
 
 <body>
+<div id="dark" onclick="switchDarkMode()"></div>
+<script>
+  var isNight = new Date().getHours() >= 22 || new Date().getHours() < 7; // 指定时间
+  // 依次判断 系统暗黑模式 指定时间 缓存 dark
+  if( matchMedia('(prefers-color-scheme: dark)').matches || isNight || localStorage.getItem('dark') === '1') {
+    if(!(isNight&&localStorage.getItem('noDark') === '1')) {
+      document.body.classList.add('dark');
+    }
+  }
+  document.getElementById('dark').innerHTML = document.querySelector("body").classList.contains("dark")?"🌙":"🌞";
+</script>
   <header style="height: 60vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
-       href="/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
+       href="/">&nbsp;<strong>CRRRRRAAAZY</strong>&nbsp;</a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -176,7 +187,7 @@
 
 <div class="text-center">
   <div class="about-info">
-    <div class="about-name">myname</div>
+    <div class="about-name">sam315</div>
     <div class="about-intro">一句简短的介绍</div>
     <div class="about-icons">
       
@@ -194,11 +205,11 @@
         
         
         
-        <a href="https://douban.com" class="
+        <a href="https://twitter.com" class="
            hint--bottom hint--rounded"
-           aria-label=豆瓣
+           aria-label=twitter
         >
-          <i class="iconfont icon-douban-fill" aria-hidden="true"></i>
+          <i class="iconfont icon-twitter-fill" aria-hidden="true"></i>
           
         </a>
       
@@ -219,9 +230,14 @@
   </div>
 </div>
 <div class="mt-5 markdown-body">
-  <h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><p>i貌似本地把你打死不少地方ionsi欧格尼斯哦那个是i按via送啊</p>
-<hr>
-
+  <h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><p>貌似正文什么的并不存在</p>
+<script src="https://utteranc.es/client.js"
+        repo="https://github.com/CRRRRRAAAZY/CRRRRRAAAZY.github.io.git"
+        issue-term="pathname"
+        theme="photon-dark"
+        crossorigin="anonymous"
+        async>
+</script>
 </div>
 
               </div>
@@ -304,6 +320,7 @@
 
     
   </div>
+
 </footer>
 
 <!-- SCRIPTS -->
